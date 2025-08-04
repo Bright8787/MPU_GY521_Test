@@ -1,23 +1,10 @@
-20:48:00 **** Incremental Build of configuration Debug for project MPU_GY521 ****
+20:53:59 **** Incremental Build of configuration Debug for project MPU_GY521 ****
 make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Driver/Src/stm32f446xx_GPIO_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f446xx_GPIO_driver.d" -MT"Driver/Src/stm32f446xx_GPIO_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f446xx_GPIO_driver.o"
-arm-none-eabi-gcc "../Driver/Src/stm32f446xx_I2C_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f446xx_I2C_driver.d" -MT"Driver/Src/stm32f446xx_I2C_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f446xx_I2C_driver.o"
-arm-none-eabi-gcc "../Bsp/MPU_gy_521.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Bsp/MPU_gy_521.d" -MT"Bsp/MPU_gy_521.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Bsp/MPU_gy_521.o"
-../Driver/Src/stm32f446xx_I2C_driver.c:54:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
-   54 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
-      |             ^~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "MPU_GY521.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MPU_GY521.map" -Wl,--gc-sections -static -L"../-specs=rdimon.specs -lc -lrdimon" -specs=rdimon.specs --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: MPU_GY521.elf
- 
 arm-none-eabi-size  MPU_GY521.elf 
-arm-none-eabi-objdump -h -S MPU_GY521.elf  > "MPU_GY521.list"
    text	   data	    bss	    dec	    hex	filename
   12308	    132	   2116	  14556	   38dc	MPU_GY521.elf
 Finished building: default.size.stdout
  
-Finished building: MPU_GY521.list
- 
 
-20:48:00 Build Finished. 0 errors, 1 warnings. (took 120ms)
+20:53:59 Build Finished. 0 errors, 0 warnings. (took 84ms)
 
