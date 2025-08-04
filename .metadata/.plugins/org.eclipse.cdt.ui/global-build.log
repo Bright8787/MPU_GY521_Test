@@ -1,0 +1,103 @@
+20:39:56 **** Clean-only build of configuration Debug for project MPU_GY521 ****
+make -j16 clean 
+rm -rf ./Startup/startup_stm32f446retx.d ./Startup/startup_stm32f446retx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ./Driver/Src/stm32f446xx_GPIO_driver.cyclo ./Driver/Src/stm32f446xx_GPIO_driver.d ./Driver/Src/stm32f446xx_GPIO_driver.o ./Driver/Src/stm32f446xx_GPIO_driver.su ./Driver/Src/stm32f446xx_I2C_driver.cyclo ./Driver/Src/stm32f446xx_I2C_driver.d ./Driver/Src/stm32f446xx_I2C_driver.o ./Driver/Src/stm32f446xx_I2C_driver.su
+rm -rf ./Bsp/MPU_gy_521.cyclo ./Bsp/MPU_gy_521.d ./Bsp/MPU_gy_521.o ./Bsp/MPU_gy_521.su
+rm -rf MPU_GY521.elf MPU_GY521.list MPU_GY521.map default.size.stdout
+ 
+20:39:56 **** Build of configuration Debug for project MPU_GY521 ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f446xx_GPIO_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f446xx_GPIO_driver.d" -MT"Driver/Src/stm32f446xx_GPIO_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f446xx_GPIO_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f446xx_I2C_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f446xx_I2C_driver.d" -MT"Driver/Src/stm32f446xx_I2C_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f446xx_I2C_driver.o"
+arm-none-eabi-gcc "../Bsp/MPU_gy_521.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Bsp/MPU_gy_521.d" -MT"Bsp/MPU_gy_521.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Bsp/MPU_gy_521.o"
+../Driver/Src/stm32f446xx_I2C_driver.c:445:6: error: conflicting types for 'I2C_EV_IRQHandling'; have 'void(I2C_Handle_t *, uint8_t,  uint8_t *)' {aka 'void(I2C_Handle_t *, unsigned char,  unsigned char *)'}
+  445 | void I2C_EV_IRQHandling(I2C_Handle_t *pI2CHandle, uint8_t SlaveAddr, uint8_t *pRxBuffer){
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from ../Driver/Src/stm32f446xx_I2C_driver.c:7:
+/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc/stm32f446xx_I2C_driver.h:93:6: note: previous declaration of 'I2C_EV_IRQHandling' with type 'void(I2C_Handle_t *)'
+   93 | void I2C_EV_IRQHandling(I2C_Handle_t *pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c: In function 'I2C_EV_IRQHandling':
+../Driver/Src/stm32f446xx_I2C_driver.c:464:58: error: 'I2C_SEND_ADDR_W' undeclared (first use in this function); did you mean 'I2C_SR1_ADDR'?
+  464 |                                  pI2CHandle->TxRxState = I2C_SEND_ADDR_W;
+      |                                                          ^~~~~~~~~~~~~~~
+      |                                                          I2C_SR1_ADDR
+../Driver/Src/stm32f446xx_I2C_driver.c:464:58: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f446xx_I2C_driver.c:471:57: error: 'I2C_SEND_ADDR_R' undeclared (first use in this function); did you mean 'I2C_SR1_ADDR'?
+  471 |                                 pI2CHandle->TxRxState = I2C_SEND_ADDR_R;
+      |                                                         ^~~~~~~~~~~~~~~
+      |                                                         I2C_SR1_ADDR
+../Driver/Src/stm32f446xx_I2C_driver.c:488:63: error: 'I2C_SEND_REG' undeclared (first use in this function)
+  488 |                 if(temp1 && temp3 && pI2CHandle->TxRxState == I2C_SEND_REG){
+      |                                                               ^~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c:504:49: error: 'I2C_SEND_REPEATED_START' undeclared (first use in this function)
+  504 |                         pI2CHandle->TxRxState = I2C_SEND_REPEATED_START;
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c:566:72: error: 'I2C_RECEIVE_DATA' undeclared (first use in this function)
+  566 |                 if(temp1 && temp2 && temp3 && pI2CHandle->TxRxState == I2C_RECEIVE_DATA){
+      |                                                                        ^~~~~~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c:580:65: error: 'I2C_STATE_IDLE' undeclared (first use in this function)
+  580 |                                         pI2CHandle->TxRxState = I2C_STATE_IDLE;
+      |                                                                 ^~~~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c: At top level:
+../Driver/Src/stm32f446xx_I2C_driver.c:54:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+   54 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f446xx_I2C_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:43:51 **** Incremental Build of configuration Debug for project MPU_GY521 ****
+make -j16 all 
+arm-none-eabi-gcc "../Driver/Src/stm32f446xx_I2C_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f446xx_I2C_driver.d" -MT"Driver/Src/stm32f446xx_I2C_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f446xx_I2C_driver.o"
+../Driver/Src/stm32f446xx_I2C_driver.c: In function 'I2C_EV_IRQHandling':
+../Driver/Src/stm32f446xx_I2C_driver.c:464:58: error: 'I2C_SEND_ADDR_W' undeclared (first use in this function); did you mean 'I2C_SR1_ADDR'?
+  464 |                                  pI2CHandle->TxRxState = I2C_SEND_ADDR_W;
+      |                                                          ^~~~~~~~~~~~~~~
+      |                                                          I2C_SR1_ADDR
+../Driver/Src/stm32f446xx_I2C_driver.c:464:58: note: each undeclared identifier is reported only once for each function it appears in
+../Driver/Src/stm32f446xx_I2C_driver.c:471:57: error: 'I2C_SEND_ADDR_R' undeclared (first use in this function); did you mean 'I2C_SR1_ADDR'?
+  471 |                                 pI2CHandle->TxRxState = I2C_SEND_ADDR_R;
+      |                                                         ^~~~~~~~~~~~~~~
+      |                                                         I2C_SR1_ADDR
+../Driver/Src/stm32f446xx_I2C_driver.c:488:63: error: 'I2C_SEND_REG' undeclared (first use in this function)
+  488 |                 if(temp1 && temp3 && pI2CHandle->TxRxState == I2C_SEND_REG){
+      |                                                               ^~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c:504:49: error: 'I2C_SEND_REPEATED_START' undeclared (first use in this function)
+  504 |                         pI2CHandle->TxRxState = I2C_SEND_REPEATED_START;
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c:566:72: error: 'I2C_RECEIVE_DATA' undeclared (first use in this function)
+  566 |                 if(temp1 && temp2 && temp3 && pI2CHandle->TxRxState == I2C_RECEIVE_DATA){
+      |                                                                        ^~~~~~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c:580:65: error: 'I2C_STATE_IDLE' undeclared (first use in this function)
+  580 |                                         pI2CHandle->TxRxState = I2C_STATE_IDLE;
+      |                                                                 ^~~~~~~~~~~~~~
+../Driver/Src/stm32f446xx_I2C_driver.c: At top level:
+../Driver/Src/stm32f446xx_I2C_driver.c:54:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+   54 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+make: *** [Driver/Src/subdir.mk:22: Driver/Src/stm32f446xx_I2C_driver.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+20:48:00 **** Incremental Build of configuration Debug for project MPU_GY521 ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f446xx_GPIO_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f446xx_GPIO_driver.d" -MT"Driver/Src/stm32f446xx_GPIO_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f446xx_GPIO_driver.o"
+arm-none-eabi-gcc "../Driver/Src/stm32f446xx_I2C_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Driver/Src/stm32f446xx_I2C_driver.d" -MT"Driver/Src/stm32f446xx_I2C_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Driver/Src/stm32f446xx_I2C_driver.o"
+arm-none-eabi-gcc "../Bsp/MPU_gy_521.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Driver/Inc" -I"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/Bsp" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Bsp/MPU_gy_521.d" -MT"Bsp/MPU_gy_521.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Bsp/MPU_gy_521.o"
+../Driver/Src/stm32f446xx_I2C_driver.c:54:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+   54 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "MPU_GY521.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"/home/bright/STM32CubeIDE/chapter_1/MPU_GY521/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MPU_GY521.map" -Wl,--gc-sections -static -L"../-specs=rdimon.specs -lc -lrdimon" -specs=rdimon.specs --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MPU_GY521.elf
+ 
+arm-none-eabi-size  MPU_GY521.elf 
+arm-none-eabi-objdump -h -S MPU_GY521.elf  > "MPU_GY521.list"
+   text	   data	    bss	    dec	    hex	filename
+  12308	    132	   2116	  14556	   38dc	MPU_GY521.elf
+Finished building: default.size.stdout
+ 
+Finished building: MPU_GY521.list
+ 
